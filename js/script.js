@@ -1,6 +1,7 @@
 // toggle icon navbar
 let menuIcon = document.querySelector("#menu-icon");
 let navbar = document.querySelector(".navbar");
+const snowContainer = document.querySelector(".snow");
 
 
 menuIcon.onclick = () => {
@@ -8,8 +9,18 @@ menuIcon.onclick = () => {
     navbar.classList.toggle("active");
 }
 
+snowContainer.innerHTML = "";
 
+function generarNieve() {
+    Array.from({ length: 51 }).forEach((_, i) => {
+        const num = generarNumero(11, 26)
+        snowContainer.innerHTML += `<span style="--i:${num}"></span>`
+    })
 
+}
+function generarNumero(inicio, final) {
+    return Math.floor(Math.random() * (final - inicio + 1) + inicio)
+}
 
 // scroll sections active link
 

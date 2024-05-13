@@ -130,6 +130,37 @@ span {
 }
 
 
+.home .snow {
+    position: relative;
+    display: flex;
+}
+
+.home .snow span {
+position: relative;
+min-width: 5px;
+height: 5px;
+border-radius: 50%;
+background: #fff;
+margin: 0 1vw;
+box-shadow: -100px 20px 5px #fff, 100px 20px 10px #fff;
+animation: animacionNieve 15s linear infinite;
+animation-duration: calc(75s / var(--i));
+}
+
+.home .snow span:nth-child(even) {
+min-width: 10px;
+height: 10px;
+}
+
+@keyframes animacionNieve {
+    0% {
+        transform: translateY(-10vh);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
 
 .btn {
     display: inline-block;
